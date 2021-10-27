@@ -73,6 +73,31 @@ app.get('/', (req, res) => {
     res.send('genius server running');
 });
 
+app.get('/hello', (req, res) => {
+    res.send('hello updated here');
+})
+
 app.listen(port, () => {
     console.log('Running genius server on port', port);
 })
+
+/* Steps for heroku deploy One time:
+1.heroku acount open
+2.heroku software install
+
+Steps for heroku deploy every project:
+1.git init
+2.gitignore(node_module, .env)
+3.git push everything like normal
+4.make sure that you have this script in package.json:"start": "node index.js"
+5.make sure that : put process.env.PORT in the port variable
+6.heroku login
+7.heroku create project only one time for a project
+8.command: git push heroku main
+--------
+Update:
+1.check everything and save
+2.git add. , git commit -m"",git push
+3.git push heroku main
+
+*/
